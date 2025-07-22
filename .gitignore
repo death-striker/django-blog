@@ -1,0 +1,59 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# Django specific
+*.log
+*.pot
+*.pyc
+*.mo
+*.sqlite3
+*.db
+
+# VSCode, PyCharm, etc.
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Coverage and test
+htmlcov/
+.coverage
+.tox/
+.nox/
+.pytest_cache/
+
+# Static files (if using collectstatic)
+staticfiles/
+static/
+
+# Media uploads
+media/
+
+# Environment variables
+.env
+.env.*
+
+# mypy
+.mypy_cache/
+
+# pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# PyInstaller
+*.spec
+
+# Other Git
+*.egg-info/
+.eggs/
+build/
+dist/
