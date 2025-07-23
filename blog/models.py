@@ -6,7 +6,8 @@ from django.contrib.auth.models import AbstractUser
 class RegisterUser(AbstractUser):
 
     email= models.EmailField(unique= True)
-    phone_number = models.CharField(max_length= 10, blank=False)
+    username=models.CharField(unique=True)
+    phone_number = models.CharField(unique= True,max_length= 10, blank=False)
     address = models.CharField( blank=True, null=True)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['phone_number', 'first_name', 'last_name']
