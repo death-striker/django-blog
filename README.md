@@ -123,7 +123,7 @@ python manage.py runserver
 
 Add this below the setup instructions (outside the code block):
 
-```markdown
+
 ---
 
 ## 📸 Admin Panel
