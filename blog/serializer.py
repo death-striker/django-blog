@@ -1,6 +1,6 @@
 from django.contrib.auth import authenticate
 from rest_framework import serializers
-from .models import RegisterUser
+from .models import RegisterUser , BlogPost
 from django.contrib.auth.password_validation import validate_password
 
 # from django.contrib.auth import
@@ -43,6 +43,23 @@ class LoginSerializer(serializers.Serializer):
         attrs['user'] = user
         return attrs
 
+class BlogPostSerializer(serializers.ModelSerializer):
+    author = serializers.ReadOnlyField(source='author.email')
+    class Meta:
+        model=BlogPost
+        fields='__all__'
+        read_only_fields=['id','author','created_at','updated_at']
 
+class ProfileViewSerializer(serializers.ModelSerializer):
 
+    class Meta:
+        model = RegisterUser
+        fields = ['username', 'email', 'id', 'first_name', 'last_name', 'phone_number', 'address', 'avatar']
+        read_only_fields = [ 'id', 'email',' username']
 
+class PublicUserSerializer (serializers.ModelSerializer):
+
+    class Meta:
+
+        model = RegisterUser
+        fields = [ 'id', 'username', 'email', 'first_name', 'last_name' ]
